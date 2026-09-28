@@ -1,0 +1,300 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+  background: linear-gradient(
+    135deg,
+    #dff6ff,
+    #bde7f5,
+    #eaf9ff
+);
+
+color: #355568;
+}
+
+.container {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.heart {
+    font-size: 55px;
+    margin-bottom: 10px;
+
+    animation: pulsar 1.2s infinite;
+
+    filter: drop-shadow(0 0 8px rgba(90, 169, 199, 0.5));
+}
+
+h1 {
+    font-size: 40px;
+    margin-bottom: 30px;
+
+    color: #5aa9c7;
+
+    text-shadow: 0 2px 8px rgba(90, 169, 199, 0.25);
+}
+
+.botoes {
+    position: relative;
+    z-index: 10;
+}
+
+button {
+    padding: 15px 30px;
+    margin: 10px;
+    font-size: 20px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+button:hover {
+    transform: scale(1.08);
+}
+
+#sim {
+    background: #5aa9c7;
+    color: white;
+
+    box-shadow: 0 5px 18px rgba(60, 130, 160, 0.35);
+}
+
+#nao {
+    background: #6f8f9c;
+    color: white;
+}
+
+.gatinho-principal {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    margin: 30px auto 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 75px;
+    animation: gatinhoFlutuando 3s ease-in-out infinite;
+}
+.gatinho-principal img {
+    position: relative;
+    z-index: 2;
+    width: 130px;
+    height: auto;
+    filter: drop-shadow(0 0 8px rgba(255, 100, 160, 0.6));
+}
+.brilho {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: rgba(255, 70, 140, 0.2);
+    filter: blur(25px);
+}
+
+@keyframes pulsar {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.3);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes gatinhoFlutuando {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+
+/* SEGUNDA PÁGINA */
+
+/* =========================================
+   SEGUNDA PÁGINA — DECLARAÇÃO
+   ========================================= */
+
+.pagina-declaracao {
+    min-height: 100vh;
+    margin: 0;
+    padding: 50px 20px 70px;
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    background:
+        radial-gradient(circle at top, #f7fdff 0%, transparent 35%),
+        linear-gradient(135deg, #dff6ff, #bde7f5, #eaf9ff);
+
+    color: #355568;
+    font-family: Arial, sans-serif;
+
+    overflow-y: auto;
+}
+
+.pagina-declaracao .declaracao {
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+}
+
+
+/* =========================================
+   GATINHO
+   ========================================= */
+
+.pagina-declaracao .gatinho {
+    display: block;
+
+    width: 220px;
+    height: auto;
+
+    margin: 0 auto 25px;
+
+    animation: gatinhoPulando 3s ease-in-out infinite;
+
+    filter: drop-shadow(0 8px 12px rgba(70, 130, 150, 0.18));
+}
+
+
+/* =========================================
+   CARTINHA
+   ========================================= */
+
+.pagina-declaracao .carta {
+    position: relative;
+
+    width: 100%;
+    box-sizing: border-box;
+
+    background: rgba(255, 255, 255, 0.94);
+
+    padding: 45px 50px;
+
+    border-radius: 28px;
+
+    border: 2px solid rgba(150, 210, 225, 0.45);
+
+    box-shadow:
+        0 15px 40px rgba(70, 130, 150, 0.18),
+        0 3px 10px rgba(70, 130, 150, 0.08);
+
+    text-align: left;
+}
+
+
+/* detalhe decorativo da carta */
+
+.pagina-declaracao .carta::before {
+    content: "💙";
+
+    position: absolute;
+
+    top: 18px;
+    right: 22px;
+
+    font-size: 22px;
+
+    opacity: 0.7;
+}
+
+
+/* =========================================
+   TÍTULO
+   ========================================= */
+
+.pagina-declaracao h1 {
+    text-align: center;
+
+    color: #5aa9c7;
+
+    font-size: 40px;
+
+    margin-top: 0;
+    margin-bottom: 35px;
+
+    text-shadow: 0 2px 8px rgba(90, 169, 199, 0.18);
+}
+
+
+/* =========================================
+   TEXTO
+   ========================================= */
+
+.pagina-declaracao p {
+    font-size: 18px;
+
+    line-height: 1.9;
+
+    margin-top: 0;
+    margin-bottom: 30px;
+
+    color: #355568;
+}
+
+
+/* =========================================
+   ANIMAÇÃO DO GATINHO
+   ========================================= */
+
+@keyframes gatinhoPulando {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
+}
+
+
+/* =========================================
+   CELULAR
+   ========================================= */
+
+@media (max-width: 600px) {
+
+    .pagina-declaracao {
+        padding: 30px 12px 50px;
+    }
+
+    .pagina-declaracao .gatinho {
+        width: 170px;
+        margin-bottom: 18px;
+    }
+
+    .pagina-declaracao .carta {
+        padding: 32px 22px;
+        border-radius: 22px;
+    }
+
+    .pagina-declaracao h1 {
+        font-size: 30px;
+        margin-bottom: 28px;
+    }
+
+    .pagina-declaracao p {
+        font-size: 17px;
+        line-height: 1.8;
+        margin-bottom: 25px;
+    }
+
+}
