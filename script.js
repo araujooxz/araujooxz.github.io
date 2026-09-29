@@ -3,40 +3,31 @@ const botaoSim = document.getElementById("sim");
 
 let cliquesNao = 0;
 
+
 // BOTÃO SIM
-botaoSim.addEventListener("click", function() {
+botaoSim.onclick = function() {
+    window.location.href = "index2.html";
+};
 
-```
-window.location.href = "index2.html";
-```
-
-});
 
 // BOTÃO NÃO
-botaoNao.addEventListener("mouseover", function() {
+botaoNao.onmouseover = function() {
 
-```
-cliquesNao++;
+    cliquesNao++;
 
-// NO 10º CLIQUE, O BOTÃO DESAPARECE
-if (cliquesNao >= 10) {
+    // NO 10º CLIQUE, O BOTÃO SOME
+    if (cliquesNao >= 10) {
+        botaoNao.style.display = "none";
+        return;
+    }
 
-    botaoNao.style.display = "none";
+    const largura = window.innerWidth - botaoNao.offsetWidth;
+    const altura = window.innerHeight - botaoNao.offsetHeight;
 
-    return;
-}
+    const x = Math.random() * largura;
+    const y = Math.random() * altura;
 
-
-const largura = window.innerWidth - botaoNao.offsetWidth;
-const altura = window.innerHeight - botaoNao.offsetHeight;
-
-const x = Math.random() * largura;
-const y = Math.random() * altura;
-
-botaoNao.style.position = "fixed";
-
-botaoNao.style.left = x + "px";
-botaoNao.style.top = y + "px";
-```
-
-});
+    botaoNao.style.position = "fixed";
+    botaoNao.style.left = x + "px";
+    botaoNao.style.top = y + "px";
+};
