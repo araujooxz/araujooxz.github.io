@@ -6,7 +6,14 @@ let cliquesNao = 0;
 
 // BOTÃO SIM
 botaoSim.onclick = function() {
-    window.location.href = "index2.html";
+
+    document.body.style.transition = "opacity 0.6s ease";
+    document.body.style.opacity = "0";
+
+    setTimeout(function() {
+        window.location.href = "index2.html";
+    }, 600);
+
 };
 
 
